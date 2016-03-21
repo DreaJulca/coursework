@@ -1,0 +1,67 @@
+Notes from Git(Hub) course
+
+	*** Soft stuff ***
+- Branching for version control is main theme of prelude lecture
+   Centralized has "gatekeeper," decentralized does not
+   
+
+- 3 places: Object database (stores metadata),
+  index/staging area (snapshot to be included in next commit), 
+  and working directory (physical 'files' on PC)
+  
+- 3 stages: Committed (safely stored in local obj db), 
+  staged (marked s.t. current state of modified file will be in next commit),
+  and modified (changes have been made in files, but not staged or committed)
+
+- Note: If you're working on a team, DO NOT COMMIT BROKEN STUFF.
+  "git stash" can save your changes to sort of "clipboard" without staging or
+  committing (like a stack of your changes)
+  and then you can use "git pop" to include it
+
+  
+	*** Commands ***
+- Really only like 10 main commands to remember, but Allison is Git pro
+  if I want more info
+
+* git init
+	WORKSPACE: Create new repository to manage current folder
+	- does not create file on your system; you've declared the location
+	  of your project
+
+* git clone <repository address>
+	GETTING: downloads repository for the first time
+
+* git add
+	STAGING: marks individual/modified files to be added to the index/staging area 
+	for next commit
+	You should use PRECISION ADDING: Do it for individual files rather than
+	just doing "git add --all"; you'll regret adding everything!
+	
+* git commit -m <message> 
+	MARK STAGED FILES FOR NEXT PUSH: takes metadata/changes from staging and adds to the object database
+	You should always remark on what you're adding!
+
+* git fetch <server> <branch>
+	GET CHANGES: update project db, but don't change working directory
+	
+* git merge <source branch>
+	applies commits from source branch to current working dir, 
+	which is a manifestation of another branch. Note that this may 
+	result in a merge conflict! You'll have to resolve before it's final
+	
+* git pull 
+	perform "git fetch" THEN "git merge" into wdir
+	- just *guesses* origin and master
+	- Use to "sync up" (as long as you've already cloned) before git push
+	
+* git push <server> <branch>
+	send your latest branch commits to remote server
+	
+
+*** Usage ***
+
+* GitHub *is* our object database noted before
+
+
+* WE MUST USE 2-(?)STAGE(?) AUTHENTICATION
+
